@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StringLocalizationTable>
+  <StringItem id="Shortcut Key Settings" context="" translation="ショートカットキー設定" />
+  <StringItem id="Commands" context="" translation="コマンド" />
+  <StringItem id="Shortcut Key(s)" context="" translation="ショートカットキー" />
+  <StringItem id="Command Description" context="" translation="コマンドの説明" />
+  <StringItem id="Current Shortcut" context="" translation="現在のショートカット" />
+  <StringItem id="Default" context="" translation="既定" />
+  <StringItem id="Remove" context="" translation="削除" />
+  <StringItem id="New Shortcut" context="" translation="新しいショートカット" />
+  <StringItem id="Add" context="" translation="追加" />
+  <StringItem id="Assign" context="" translation="割り当て" />
+  <StringItem id="Shortcut used by:" context="" translation="現在の割り当て先" />
+  <StringItem id="Set All To Default" context="" translation="すべて既定に戻す" />
+  <StringItem id="OK" context="" translation="OK" />
+  <StringItem id="Cancel" context="" translation="キャンセル" />
+</StringLocalizationTable>
