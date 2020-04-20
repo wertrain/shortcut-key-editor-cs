@@ -5,7 +5,7 @@ namespace ShortcutKeyEditor.Localize
     public class LocalizeUtil
     {
         /// <summary>
-        /// 
+        /// コントロールとその子をローカライズする
         /// </summary>
         /// <param name="control"></param>
         public static void Localized (Control control)
@@ -28,15 +28,6 @@ namespace ShortcutKeyEditor.Localize
                     }
                 }
             }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="columnHeader"></param>
-        public static void Localized(ColumnHeader columnHeader)
-        {
-            columnHeader.Text = columnHeader.Text.Localize();
         }
     }
 }
