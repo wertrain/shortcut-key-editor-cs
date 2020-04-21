@@ -36,15 +36,15 @@
             this.groupBoxCommandDescription = new System.Windows.Forms.GroupBox();
             this.labelExplain = new System.Windows.Forms.Label();
             this.groupBoxCurrentShortcut = new System.Windows.Forms.GroupBox();
+            this.buttonRemoveShortcut = new System.Windows.Forms.Button();
+            this.buttonSetToDefault = new System.Windows.Forms.Button();
             this.groupBoxNewShortcut = new System.Windows.Forms.GroupBox();
+            this.buttonAssignShortcut = new System.Windows.Forms.Button();
+            this.buttonAddShortcut = new System.Windows.Forms.Button();
             this.groupBoxShortcutUsed = new System.Windows.Forms.GroupBox();
             this.buttonSetAllToDefault = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonSetToDefault = new System.Windows.Forms.Button();
-            this.buttonRemoveShortcut = new System.Windows.Forms.Button();
-            this.buttonAddShortcut = new System.Windows.Forms.Button();
-            this.buttonAssignShortcut = new System.Windows.Forms.Button();
             this.groupBoxCommands.SuspendLayout();
             this.groupBoxCommandDescription.SuspendLayout();
             this.groupBoxCurrentShortcut.SuspendLayout();
@@ -111,7 +111,6 @@
             this.labelExplain.Name = "labelExplain";
             this.labelExplain.Size = new System.Drawing.Size(482, 36);
             this.labelExplain.TabIndex = 0;
-            this.labelExplain.Text = resources.GetString("labelExplain.Text");
             // 
             // groupBoxCurrentShortcut
             // 
@@ -126,6 +125,26 @@
             this.groupBoxCurrentShortcut.TabStop = false;
             this.groupBoxCurrentShortcut.Text = "Current Shortcut";
             // 
+            // buttonRemoveShortcut
+            // 
+            this.buttonRemoveShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRemoveShortcut.Location = new System.Drawing.Point(418, 17);
+            this.buttonRemoveShortcut.Name = "buttonRemoveShortcut";
+            this.buttonRemoveShortcut.Size = new System.Drawing.Size(75, 23);
+            this.buttonRemoveShortcut.TabIndex = 1;
+            this.buttonRemoveShortcut.Text = "Remove";
+            this.buttonRemoveShortcut.UseVisualStyleBackColor = true;
+            // 
+            // buttonSetToDefault
+            // 
+            this.buttonSetToDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSetToDefault.Location = new System.Drawing.Point(337, 17);
+            this.buttonSetToDefault.Name = "buttonSetToDefault";
+            this.buttonSetToDefault.Size = new System.Drawing.Size(75, 23);
+            this.buttonSetToDefault.TabIndex = 0;
+            this.buttonSetToDefault.Text = "Default";
+            this.buttonSetToDefault.UseVisualStyleBackColor = true;
+            // 
             // groupBoxNewShortcut
             // 
             this.groupBoxNewShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -138,6 +157,26 @@
             this.groupBoxNewShortcut.TabIndex = 4;
             this.groupBoxNewShortcut.TabStop = false;
             this.groupBoxNewShortcut.Text = "New Shortcut";
+            // 
+            // buttonAssignShortcut
+            // 
+            this.buttonAssignShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAssignShortcut.Location = new System.Drawing.Point(418, 17);
+            this.buttonAssignShortcut.Name = "buttonAssignShortcut";
+            this.buttonAssignShortcut.Size = new System.Drawing.Size(75, 23);
+            this.buttonAssignShortcut.TabIndex = 1;
+            this.buttonAssignShortcut.Text = "Assign";
+            this.buttonAssignShortcut.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddShortcut
+            // 
+            this.buttonAddShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddShortcut.Location = new System.Drawing.Point(337, 17);
+            this.buttonAddShortcut.Name = "buttonAddShortcut";
+            this.buttonAddShortcut.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddShortcut.TabIndex = 0;
+            this.buttonAddShortcut.Text = "Add";
+            this.buttonAddShortcut.UseVisualStyleBackColor = true;
             // 
             // groupBoxShortcutUsed
             // 
@@ -179,46 +218,6 @@
             this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // buttonSetToDefault
-            // 
-            this.buttonSetToDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSetToDefault.Location = new System.Drawing.Point(337, 17);
-            this.buttonSetToDefault.Name = "buttonSetToDefault";
-            this.buttonSetToDefault.Size = new System.Drawing.Size(75, 23);
-            this.buttonSetToDefault.TabIndex = 0;
-            this.buttonSetToDefault.Text = "Default";
-            this.buttonSetToDefault.UseVisualStyleBackColor = true;
-            // 
-            // buttonRemoveShortcut
-            // 
-            this.buttonRemoveShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRemoveShortcut.Location = new System.Drawing.Point(418, 17);
-            this.buttonRemoveShortcut.Name = "buttonRemoveShortcut";
-            this.buttonRemoveShortcut.Size = new System.Drawing.Size(75, 23);
-            this.buttonRemoveShortcut.TabIndex = 1;
-            this.buttonRemoveShortcut.Text = "Remove";
-            this.buttonRemoveShortcut.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddShortcut
-            // 
-            this.buttonAddShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddShortcut.Location = new System.Drawing.Point(337, 17);
-            this.buttonAddShortcut.Name = "buttonAddShortcut";
-            this.buttonAddShortcut.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddShortcut.TabIndex = 0;
-            this.buttonAddShortcut.Text = "Add";
-            this.buttonAddShortcut.UseVisualStyleBackColor = true;
-            // 
-            // buttonAssignShortcut
-            // 
-            this.buttonAssignShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAssignShortcut.Location = new System.Drawing.Point(418, 17);
-            this.buttonAssignShortcut.Name = "buttonAssignShortcut";
-            this.buttonAssignShortcut.Size = new System.Drawing.Size(75, 23);
-            this.buttonAssignShortcut.TabIndex = 1;
-            this.buttonAssignShortcut.Text = "Assign";
-            this.buttonAssignShortcut.UseVisualStyleBackColor = true;
             // 
             // FormKeySettings
             // 
