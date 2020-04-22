@@ -51,6 +51,7 @@
     <Compile Include="FormKeySettings.Designer.cs">
       <DependentUpon>FormKeySettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="KeyUtil.cs" />
     <Compile Include="Localize\EmbeddedResourceStringLocalizer.cs" />
     <Compile Include="Localize\Localizer.cs" />
     <Compile Include="Localize\LocalizeUtil.cs" />

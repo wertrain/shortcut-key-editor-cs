@@ -14,6 +14,9 @@ namespace ShortcutKeyEditor
 {
     public partial class FormKeySettings : Form
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public FormKeySettings()
         {
             InitializeComponent();
@@ -21,9 +24,29 @@ namespace ShortcutKeyEditor
             Localize();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         void Localize()
         {
             LocalizeUtil.Localized(this);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textbox_new_shortcut_KeyDown(object sender, KeyEventArgs e)
+        {
+            var textbox = sender as TextBox;
+            InputKeys = ModifierKeys | e.KeyCode;
+            textbox.Text = KeyUtil.KeysToString(InputKeys);
+        }
+
+        /// <summary>
+        /// 入力されているキー
+        /// </summary>
+        private Keys InputKeys { get; set; }
     }
 }
