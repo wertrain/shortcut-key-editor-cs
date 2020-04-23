@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ShortcutKeyEditor.Layout;
 using ShortcutKeyEditor.Localize;
 
 namespace ShortcutKeyEditor
@@ -48,5 +49,15 @@ namespace ShortcutKeyEditor
         /// 入力されているキー
         /// </summary>
         private Keys InputKeys { get; set; }
+
+        /// <summary>
+        /// フォームロードイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormKeySettings_Load(object sender, EventArgs e)
+        {
+            //var layout = LayoutLoader.Load(@".\layout.xml");
+        }
     }
 }

@@ -52,6 +52,8 @@
       <DependentUpon>FormKeySettings.cs</DependentUpon>
     </Compile>
     <Compile Include="KeyUtil.cs" />
+    <Compile Include="Layout\LayoutLoader.cs" />
+    <Compile Include="Layout\LayoutParam.cs" />
     <Compile Include="Localize\EmbeddedResourceStringLocalizer.cs" />
     <Compile Include="Localize\Localizer.cs" />
     <Compile Include="Localize\LocalizeUtil.cs" />
@@ -87,5 +89,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\ja\Localization.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

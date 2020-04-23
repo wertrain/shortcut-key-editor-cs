@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKeySettings));
-            this.groupBoxCommands = new System.Windows.Forms.GroupBox();
             this.listViewCommands = new System.Windows.Forms.ListView();
             this.columnHeaderCommandName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderCommandKeys = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,37 +45,25 @@
             this.buttonSetAllToDefault = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.groupBoxCommands.SuspendLayout();
+            this.tabControlCommands = new System.Windows.Forms.TabControl();
+            this.tabPageBase = new System.Windows.Forms.TabPage();
             this.groupBoxCommandDescription.SuspendLayout();
             this.groupBoxCurrentShortcut.SuspendLayout();
             this.groupBoxNewShortcut.SuspendLayout();
+            this.tabControlCommands.SuspendLayout();
+            this.tabPageBase.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBoxCommands
-            // 
-            this.groupBoxCommands.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxCommands.Controls.Add(this.listViewCommands);
-            this.groupBoxCommands.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxCommands.Name = "groupBoxCommands";
-            this.groupBoxCommands.Size = new System.Drawing.Size(555, 156);
-            this.groupBoxCommands.TabIndex = 0;
-            this.groupBoxCommands.TabStop = false;
-            this.groupBoxCommands.Text = "Commands";
             // 
             // listViewCommands
             // 
-            this.listViewCommands.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewCommands.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderCommandName,
             this.columnHeaderCommandKeys});
+            this.listViewCommands.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewCommands.HideSelection = false;
-            this.listViewCommands.Location = new System.Drawing.Point(8, 17);
+            this.listViewCommands.Location = new System.Drawing.Point(3, 3);
             this.listViewCommands.Name = "listViewCommands";
-            this.listViewCommands.Size = new System.Drawing.Size(539, 131);
+            this.listViewCommands.Size = new System.Drawing.Size(543, 128);
             this.listViewCommands.TabIndex = 0;
             this.listViewCommands.UseCompatibleStateImageBehavior = false;
             this.listViewCommands.View = System.Windows.Forms.View.Details;
@@ -233,33 +220,57 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
+            // tabControlCommands
+            // 
+            this.tabControlCommands.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlCommands.Controls.Add(this.tabPageBase);
+            this.tabControlCommands.Location = new System.Drawing.Point(2, 2);
+            this.tabControlCommands.Name = "tabControlCommands";
+            this.tabControlCommands.SelectedIndex = 0;
+            this.tabControlCommands.Size = new System.Drawing.Size(557, 160);
+            this.tabControlCommands.TabIndex = 1;
+            // 
+            // tabPageBase
+            // 
+            this.tabPageBase.Controls.Add(this.listViewCommands);
+            this.tabPageBase.Location = new System.Drawing.Point(4, 22);
+            this.tabPageBase.Name = "tabPageBase";
+            this.tabPageBase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageBase.Size = new System.Drawing.Size(549, 134);
+            this.tabPageBase.TabIndex = 0;
+            this.tabPageBase.Text = "Commands";
+            this.tabPageBase.UseVisualStyleBackColor = true;
+            // 
             // FormKeySettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 418);
+            this.Controls.Add(this.tabControlCommands);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.buttonSetAllToDefault);
             this.Controls.Add(this.groupBoxShortcutUsed);
             this.Controls.Add(this.groupBoxNewShortcut);
             this.Controls.Add(this.groupBoxCurrentShortcut);
-            this.Controls.Add(this.groupBoxCommands);
             this.Controls.Add(this.groupBoxCommandDescription);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormKeySettings";
             this.Text = "Shortcut Key Settings";
-            this.groupBoxCommands.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FormKeySettings_Load);
             this.groupBoxCommandDescription.ResumeLayout(false);
             this.groupBoxCurrentShortcut.ResumeLayout(false);
             this.groupBoxNewShortcut.ResumeLayout(false);
             this.groupBoxNewShortcut.PerformLayout();
+            this.tabControlCommands.ResumeLayout(false);
+            this.tabPageBase.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBoxCommands;
         private System.Windows.Forms.GroupBox groupBoxCommandDescription;
         private System.Windows.Forms.Label labelExplain;
         private System.Windows.Forms.ListView listViewCommands;
@@ -276,6 +287,8 @@
         private System.Windows.Forms.Button buttonAssignShortcut;
         private System.Windows.Forms.Button buttonAddShortcut;
         private System.Windows.Forms.TextBox textbox_new_shortcut;
+        private System.Windows.Forms.TabControl tabControlCommands;
+        private System.Windows.Forms.TabPage tabPageBase;
     }
 }
 
