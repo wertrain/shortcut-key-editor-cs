@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyControl\KeySetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\KeySetControl.Designer.cs">
+      <DependentUpon>KeySetControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKeySettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="Localize\XmlStringLocalizer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MyControl\KeySetControl.resx">
+      <DependentUpon>KeySetControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormKeySettings.resx">
       <DependentUpon>FormKeySettings.cs</DependentUpon>
     </EmbeddedResource>

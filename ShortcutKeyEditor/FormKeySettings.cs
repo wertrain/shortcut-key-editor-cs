@@ -57,7 +57,29 @@ namespace ShortcutKeyEditor
         /// <param name="e"></param>
         private void FormKeySettings_Load(object sender, EventArgs e)
         {
-            //var layout = LayoutLoader.Load(@".\layout.xml");
+            tabControlCommands.TabPages.Clear();
+
+            var layout = LayoutLoader.Load(@".\layout.xml");
+            foreach (var layoutTab in layout.Tabs)
+            {
+                var control = new MyControl.KeySetControl();
+                control.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                var list = control.ListViewCommands;
+                foreach (var layoutKeySet in layoutTab.KeySets)
+                {
+                    var item = new ListViewItem(layoutKeySet.Label);
+                    var subItem = new ListViewItem.ListViewSubItem();
+                    subItem.Text = string.Join(", ", layoutKeySet.KeyTexts);
+                    item.SubItems.Add(subItem);
+                    list.Items.Add(item);
+                }
+
+                var tabPage = new TabPage();
+                tabPage.Text = layoutTab.Label;
+                tabPage.Controls.Add(control);
+
+                tabControlCommands.TabPages.Add(tabPage);
+            }
         }
     }
 }
