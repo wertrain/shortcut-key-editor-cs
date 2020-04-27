@@ -22,27 +22,7 @@ namespace ShortcutKeyEditor
         {
             InitializeComponent();
 
-            Localize();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        void Localize()
-        {
             LocalizeUtil.Localized(this);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void textbox_new_shortcut_KeyDown(object sender, KeyEventArgs e)
-        {
-            var textbox = sender as TextBox;
-            InputKeys = ModifierKeys | e.KeyCode;
-            textbox.Text = KeyUtil.KeysToString(InputKeys);
         }
 
         /// <summary>
@@ -64,22 +44,122 @@ namespace ShortcutKeyEditor
             {
                 var control = new MyControl.KeySetControl();
                 control.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-                var list = control.ListViewCommands;
+                var listview = control.ListViewCommands;
                 foreach (var layoutKeySet in layoutTab.KeySets)
                 {
                     var item = new ListViewItem(layoutKeySet.Label);
                     var subItem = new ListViewItem.ListViewSubItem();
                     subItem.Text = string.Join(", ", layoutKeySet.KeyTexts);
                     item.SubItems.Add(subItem);
-                    list.Items.Add(item);
+                    item.Tag = layoutKeySet;
+                    listview.Items.Add(item);
+                    listview.SelectedIndexChanged += listViewCommands_SelectedIndexChanged;
                 }
 
                 var tabPage = new TabPage();
                 tabPage.Text = layoutTab.Label;
                 tabPage.Controls.Add(control);
+                tabPage.Tag = listview;
 
                 tabControlCommands.TabPages.Add(tabPage);
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listViewCommands_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var listview = sender as ListView;
+
+            if (listview.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = null;
+                foreach (ListViewItem item in listview.SelectedItems)
+                {
+                    selectedItem = item;
+                    break;
+                }
+
+                var layoutKeySet = selectedItem.Tag as LayoutParam.KeySet;
+                labelCommandDescription.Text = layoutKeySet.Description;
+                labelCurrentShortcut.Text = string.Join(", ", layoutKeySet.KeyTexts);
+
+                textbox_new_shortcut.Enabled = true;
+            }
+            else
+            {
+                textbox_new_shortcut.Enabled = false;
+                textbox_new_shortcut.Text = string.Empty;
+                labelShortcutUsed.Text = string.Empty;
+                labelCurrentShortcut.Text = string.Empty;
+                labelCommandDescription.Text = string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textbox_new_shortcut_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            var textbox = sender as TextBox;
+            InputKeys = ModifierKeys | e.KeyCode;
+            string inputKeyText = KeyUtil.KeysToString(InputKeys);
+            textbox.Text = inputKeyText;
+
+            var selectedTab = tabControlCommands.SelectedTab;
+            ListView listview = selectedTab.Tag as ListView;
+
+            if (listview.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            var selectedItem = listview.SelectedItems[0];
+            var selectedKeyTexts = (selectedItem.Tag as LayoutParam.KeySet).KeyTexts;
+
+            foreach (ListViewItem item in listview.Items)
+            {
+                var usedKeys = item.SubItems[1].Text.Split(',');
+                foreach (var usedKey in usedKeys)
+                {
+                    if (selectedKeyTexts.Contains(inputKeyText))
+                    {
+                        continue;
+                    }
+
+                    if (inputKeyText == usedKey)
+                    {
+                        labelShortcutUsed.Text = item.Text;
+                        return;
+                    }
+                }
+            }
+
+            labelShortcutUsed.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabControlCommands_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var tabControl = sender as TabControl;
+
+            var selectedTab = tabControl.SelectedTab;
+            ListView listview = selectedTab?.Tag as ListView;
+            listview?.SelectedItems.Clear();
+
+            textbox_new_shortcut.Enabled = false;
+            textbox_new_shortcut.Text = string.Empty;
+            labelShortcutUsed.Text = string.Empty;
+            labelCurrentShortcut.Text = string.Empty;
+            labelCommandDescription.Text = string.Empty;
         }
     }
 }

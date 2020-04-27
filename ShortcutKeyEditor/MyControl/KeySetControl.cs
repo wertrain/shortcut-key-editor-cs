@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+
+using ShortcutKeyEditor.Localize;
 
 namespace ShortcutKeyEditor.MyControl
 {
@@ -15,6 +9,8 @@ namespace ShortcutKeyEditor.MyControl
         public KeySetControl()
         {
             InitializeComponent();
+
+            LocalizeUtil.Localized(this);
         }
 
         public ListView ListViewCommands

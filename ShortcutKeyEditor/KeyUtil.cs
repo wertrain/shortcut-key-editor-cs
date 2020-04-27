@@ -27,7 +27,6 @@ namespace ShortcutKeyEditor
             {
                 keyText.Append("Ctrl");
                 checkKey &= ~Keys.Control;
-                checkKey &= ~Keys.ControlKey;
             }
 
             if ((checkKey & Keys.Shift) == Keys.Shift)
@@ -39,7 +38,6 @@ namespace ShortcutKeyEditor
 
                 keyText.Append("Shift");
                 checkKey &= ~Keys.Shift;
-                checkKey &= ~Keys.ShiftKey;
             }
 
             if ((checkKey & Keys.Alt) == Keys.Alt)
@@ -51,16 +49,18 @@ namespace ShortcutKeyEditor
 
                 keyText.Append("Alt");
                 checkKey &= ~Keys.Alt;
-                checkKey &= ~Keys.Menu;
             }
 
             if (checkKey != Keys.None)
             {
-                if (keyText.Length > 0)
+                if (!(checkKey == Keys.ControlKey || checkKey == Keys.ShiftKey || checkKey == Keys.Menu))
                 {
-                    keyText.Append(InputKeySeparator);
+                    if (keyText.Length > 0)
+                    {
+                        keyText.Append(InputKeySeparator);
+                    }
+                    keyText.Append(checkKey);
                 }
-                keyText.Append(checkKey);
             }
 
             return keyText.ToString();

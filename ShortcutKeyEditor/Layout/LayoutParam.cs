@@ -61,6 +61,11 @@ namespace ShortcutKeyEditor.Layout
             /// キー表示テキスト
             /// </summary>
             public List<string> KeyTexts { get; set; }
+
+            /// <summary>
+            /// キー説明
+            /// </summary>
+            public string Description { get; set; }
         }
     }
 }

@@ -41,6 +41,7 @@
             this.listViewCommands.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewCommands.HideSelection = false;
             this.listViewCommands.Location = new System.Drawing.Point(0, 0);
+            this.listViewCommands.MultiSelect = false;
             this.listViewCommands.Name = "listViewCommands";
             this.listViewCommands.Size = new System.Drawing.Size(491, 232);
             this.listViewCommands.TabIndex = 1;

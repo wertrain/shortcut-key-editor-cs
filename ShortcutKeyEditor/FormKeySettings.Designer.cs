@@ -33,8 +33,9 @@
             this.columnHeaderCommandName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderCommandKeys = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBoxCommandDescription = new System.Windows.Forms.GroupBox();
-            this.labelExplain = new System.Windows.Forms.Label();
+            this.labelCommandDescription = new System.Windows.Forms.Label();
             this.groupBoxCurrentShortcut = new System.Windows.Forms.GroupBox();
+            this.labelCurrentShortcut = new System.Windows.Forms.Label();
             this.buttonRemoveShortcut = new System.Windows.Forms.Button();
             this.buttonSetToDefault = new System.Windows.Forms.Button();
             this.groupBoxNewShortcut = new System.Windows.Forms.GroupBox();
@@ -42,6 +43,7 @@
             this.buttonAssignShortcut = new System.Windows.Forms.Button();
             this.buttonAddShortcut = new System.Windows.Forms.Button();
             this.groupBoxShortcutUsed = new System.Windows.Forms.GroupBox();
+            this.labelShortcutUsed = new System.Windows.Forms.Label();
             this.buttonSetAllToDefault = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -50,6 +52,7 @@
             this.groupBoxCommandDescription.SuspendLayout();
             this.groupBoxCurrentShortcut.SuspendLayout();
             this.groupBoxNewShortcut.SuspendLayout();
+            this.groupBoxShortcutUsed.SuspendLayout();
             this.tabControlCommands.SuspendLayout();
             this.tabPageBase.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +85,7 @@
             // 
             this.groupBoxCommandDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxCommandDescription.Controls.Add(this.labelExplain);
+            this.groupBoxCommandDescription.Controls.Add(this.labelCommandDescription);
             this.groupBoxCommandDescription.Location = new System.Drawing.Point(3, 163);
             this.groupBoxCommandDescription.Name = "groupBoxCommandDescription";
             this.groupBoxCommandDescription.Size = new System.Drawing.Size(555, 63);
@@ -90,20 +93,21 @@
             this.groupBoxCommandDescription.TabStop = false;
             this.groupBoxCommandDescription.Text = "Command Description";
             // 
-            // labelExplain
+            // labelCommandDescription
             // 
-            this.labelExplain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelCommandDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelExplain.Location = new System.Drawing.Point(8, 18);
-            this.labelExplain.Name = "labelExplain";
-            this.labelExplain.Size = new System.Drawing.Size(539, 36);
-            this.labelExplain.TabIndex = 0;
+            this.labelCommandDescription.Location = new System.Drawing.Point(8, 18);
+            this.labelCommandDescription.Name = "labelCommandDescription";
+            this.labelCommandDescription.Size = new System.Drawing.Size(539, 36);
+            this.labelCommandDescription.TabIndex = 0;
             // 
             // groupBoxCurrentShortcut
             // 
             this.groupBoxCurrentShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxCurrentShortcut.Controls.Add(this.labelCurrentShortcut);
             this.groupBoxCurrentShortcut.Controls.Add(this.buttonRemoveShortcut);
             this.groupBoxCurrentShortcut.Controls.Add(this.buttonSetToDefault);
             this.groupBoxCurrentShortcut.Location = new System.Drawing.Point(3, 231);
@@ -112,6 +116,15 @@
             this.groupBoxCurrentShortcut.TabIndex = 3;
             this.groupBoxCurrentShortcut.TabStop = false;
             this.groupBoxCurrentShortcut.Text = "Current Shortcut";
+            // 
+            // labelCurrentShortcut
+            // 
+            this.labelCurrentShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCurrentShortcut.Location = new System.Drawing.Point(10, 23);
+            this.labelCurrentShortcut.Name = "labelCurrentShortcut";
+            this.labelCurrentShortcut.Size = new System.Drawing.Size(365, 12);
+            this.labelCurrentShortcut.TabIndex = 2;
             // 
             // buttonRemoveShortcut
             // 
@@ -151,13 +164,15 @@
             // 
             this.textbox_new_shortcut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textbox_new_shortcut.Enabled = false;
             this.textbox_new_shortcut.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textbox_new_shortcut.Location = new System.Drawing.Point(10, 19);
             this.textbox_new_shortcut.Name = "textbox_new_shortcut";
             this.textbox_new_shortcut.ReadOnly = true;
+            this.textbox_new_shortcut.ShortcutsEnabled = false;
             this.textbox_new_shortcut.Size = new System.Drawing.Size(365, 19);
             this.textbox_new_shortcut.TabIndex = 2;
-            this.textbox_new_shortcut.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_new_shortcut_KeyDown);
+            this.textbox_new_shortcut.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textbox_new_shortcut_PreviewKeyDown);
             // 
             // buttonAssignShortcut
             // 
@@ -183,12 +198,22 @@
             // 
             this.groupBoxShortcutUsed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxShortcutUsed.Controls.Add(this.labelShortcutUsed);
             this.groupBoxShortcutUsed.Location = new System.Drawing.Point(3, 336);
             this.groupBoxShortcutUsed.Name = "groupBoxShortcutUsed";
             this.groupBoxShortcutUsed.Size = new System.Drawing.Size(555, 50);
             this.groupBoxShortcutUsed.TabIndex = 5;
             this.groupBoxShortcutUsed.TabStop = false;
             this.groupBoxShortcutUsed.Text = "Shortcut used by:";
+            // 
+            // labelShortcutUsed
+            // 
+            this.labelShortcutUsed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelShortcutUsed.Location = new System.Drawing.Point(10, 23);
+            this.labelShortcutUsed.Name = "labelShortcutUsed";
+            this.labelShortcutUsed.Size = new System.Drawing.Size(537, 12);
+            this.labelShortcutUsed.TabIndex = 3;
             // 
             // buttonSetAllToDefault
             // 
@@ -231,6 +256,7 @@
             this.tabControlCommands.SelectedIndex = 0;
             this.tabControlCommands.Size = new System.Drawing.Size(557, 160);
             this.tabControlCommands.TabIndex = 1;
+            this.tabControlCommands.SelectedIndexChanged += new System.EventHandler(this.tabControlCommands_SelectedIndexChanged);
             // 
             // tabPageBase
             // 
@@ -264,6 +290,7 @@
             this.groupBoxCurrentShortcut.ResumeLayout(false);
             this.groupBoxNewShortcut.ResumeLayout(false);
             this.groupBoxNewShortcut.PerformLayout();
+            this.groupBoxShortcutUsed.ResumeLayout(false);
             this.tabControlCommands.ResumeLayout(false);
             this.tabPageBase.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -272,7 +299,7 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBoxCommandDescription;
-        private System.Windows.Forms.Label labelExplain;
+        private System.Windows.Forms.Label labelCommandDescription;
         private System.Windows.Forms.ListView listViewCommands;
         private System.Windows.Forms.ColumnHeader columnHeaderCommandName;
         private System.Windows.Forms.ColumnHeader columnHeaderCommandKeys;
@@ -289,6 +316,8 @@
         private System.Windows.Forms.TextBox textbox_new_shortcut;
         private System.Windows.Forms.TabControl tabControlCommands;
         private System.Windows.Forms.TabPage tabPageBase;
+        private System.Windows.Forms.Label labelCurrentShortcut;
+        private System.Windows.Forms.Label labelShortcutUsed;
     }
 }
 

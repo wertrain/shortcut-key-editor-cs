@@ -51,6 +51,7 @@ namespace ShortcutKeyEditor.Layout
                         layoutKeyset.Id = keyset.Attribute(AttributeNameId)?.Value;
                         layoutKeyset.Label = keyset.Attribute(AttributeNameLabel)?.Value;
                         layoutKeyset.KeyTexts = new List<string>(keyset.Value.Split(','));
+                        layoutKeyset.Description = keyset.Attribute(AttributeNameDescription)?.Value;
                         layoutTab.KeySets.Add(layoutKeyset);
                     }
                     param.Tabs.Add(layoutTab);
@@ -88,5 +89,10 @@ namespace ShortcutKeyEditor.Layout
         /// 属性名：名前
         /// </summary>
         private static readonly string AttributeNameId = "id";
+
+        /// <summary>
+        /// 属性名：説明
+        /// </summary>
+        private static readonly string AttributeNameDescription = "description";
     }
 }
