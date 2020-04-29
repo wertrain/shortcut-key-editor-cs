@@ -21,8 +21,6 @@ namespace ShortcutKeyEditor
         public FormKeySettings()
         {
             InitializeComponent();
-
-            LocalizeUtil.Localized(this);
         }
 
         /// <summary>
@@ -42,9 +40,21 @@ namespace ShortcutKeyEditor
             var layout = LayoutLoader.Load(@".\layout.xml");
             foreach (var layoutTab in layout.Tabs)
             {
-                var control = new MyControl.KeySetControl();
-                control.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-                var listview = control.ListViewCommands;
+                var listview = new ListView();
+                listview.Dock = DockStyle.Fill;
+                listview.HideSelection = false;
+                listview.FullRowSelect = true;
+                listview.View = View.Details;
+
+                var columnsHeaderCommands = new ColumnHeader();
+                columnsHeaderCommands.Text = "Commands";
+                columnsHeaderCommands.Width = 300;
+                listview.Columns.Add(columnsHeaderCommands);
+                var columnsHeaderShortcutKeys = new ColumnHeader();
+                columnsHeaderShortcutKeys.Text = "Shortcut Key(s)";
+                columnsHeaderShortcutKeys.Width = 140;
+                listview.Columns.Add(columnsHeaderShortcutKeys);
+
                 foreach (var layoutKeySet in layoutTab.KeySets)
                 {
                     var item = new ListViewItem(layoutKeySet.Label);
@@ -58,11 +68,13 @@ namespace ShortcutKeyEditor
 
                 var tabPage = new TabPage();
                 tabPage.Text = layoutTab.Label;
-                tabPage.Controls.Add(control);
+                tabPage.Controls.Add(listview);
                 tabPage.Tag = listview;
 
                 tabControlCommands.TabPages.Add(tabPage);
             }
+
+            LocalizeUtil.Localized(this);
         }
 
         /// <summary>

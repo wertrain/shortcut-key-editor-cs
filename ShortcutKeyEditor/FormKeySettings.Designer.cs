@@ -66,7 +66,7 @@
             this.listViewCommands.HideSelection = false;
             this.listViewCommands.Location = new System.Drawing.Point(3, 3);
             this.listViewCommands.Name = "listViewCommands";
-            this.listViewCommands.Size = new System.Drawing.Size(543, 128);
+            this.listViewCommands.Size = new System.Drawing.Size(545, 161);
             this.listViewCommands.TabIndex = 0;
             this.listViewCommands.UseCompatibleStateImageBehavior = false;
             this.listViewCommands.View = System.Windows.Forms.View.Details;
@@ -86,9 +86,9 @@
             this.groupBoxCommandDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxCommandDescription.Controls.Add(this.labelCommandDescription);
-            this.groupBoxCommandDescription.Location = new System.Drawing.Point(3, 163);
+            this.groupBoxCommandDescription.Location = new System.Drawing.Point(3, 201);
             this.groupBoxCommandDescription.Name = "groupBoxCommandDescription";
-            this.groupBoxCommandDescription.Size = new System.Drawing.Size(555, 63);
+            this.groupBoxCommandDescription.Size = new System.Drawing.Size(557, 50);
             this.groupBoxCommandDescription.TabIndex = 2;
             this.groupBoxCommandDescription.TabStop = false;
             this.groupBoxCommandDescription.Text = "Command Description";
@@ -100,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCommandDescription.Location = new System.Drawing.Point(8, 18);
             this.labelCommandDescription.Name = "labelCommandDescription";
-            this.labelCommandDescription.Size = new System.Drawing.Size(539, 36);
+            this.labelCommandDescription.Size = new System.Drawing.Size(541, 23);
             this.labelCommandDescription.TabIndex = 0;
             // 
             // groupBoxCurrentShortcut
@@ -110,9 +110,9 @@
             this.groupBoxCurrentShortcut.Controls.Add(this.labelCurrentShortcut);
             this.groupBoxCurrentShortcut.Controls.Add(this.buttonRemoveShortcut);
             this.groupBoxCurrentShortcut.Controls.Add(this.buttonSetToDefault);
-            this.groupBoxCurrentShortcut.Location = new System.Drawing.Point(3, 231);
+            this.groupBoxCurrentShortcut.Location = new System.Drawing.Point(3, 252);
             this.groupBoxCurrentShortcut.Name = "groupBoxCurrentShortcut";
-            this.groupBoxCurrentShortcut.Size = new System.Drawing.Size(555, 50);
+            this.groupBoxCurrentShortcut.Size = new System.Drawing.Size(557, 50);
             this.groupBoxCurrentShortcut.TabIndex = 3;
             this.groupBoxCurrentShortcut.TabStop = false;
             this.groupBoxCurrentShortcut.Text = "Current Shortcut";
@@ -123,13 +123,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCurrentShortcut.Location = new System.Drawing.Point(10, 23);
             this.labelCurrentShortcut.Name = "labelCurrentShortcut";
-            this.labelCurrentShortcut.Size = new System.Drawing.Size(365, 12);
+            this.labelCurrentShortcut.Size = new System.Drawing.Size(367, 12);
             this.labelCurrentShortcut.TabIndex = 2;
             // 
             // buttonRemoveShortcut
             // 
             this.buttonRemoveShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRemoveShortcut.Location = new System.Drawing.Point(475, 17);
+            this.buttonRemoveShortcut.Location = new System.Drawing.Point(477, 17);
             this.buttonRemoveShortcut.Name = "buttonRemoveShortcut";
             this.buttonRemoveShortcut.Size = new System.Drawing.Size(75, 23);
             this.buttonRemoveShortcut.TabIndex = 1;
@@ -139,7 +139,7 @@
             // buttonSetToDefault
             // 
             this.buttonSetToDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSetToDefault.Location = new System.Drawing.Point(394, 17);
+            this.buttonSetToDefault.Location = new System.Drawing.Point(396, 17);
             this.buttonSetToDefault.Name = "buttonSetToDefault";
             this.buttonSetToDefault.Size = new System.Drawing.Size(75, 23);
             this.buttonSetToDefault.TabIndex = 0;
@@ -153,9 +153,9 @@
             this.groupBoxNewShortcut.Controls.Add(this.textbox_new_shortcut);
             this.groupBoxNewShortcut.Controls.Add(this.buttonAssignShortcut);
             this.groupBoxNewShortcut.Controls.Add(this.buttonAddShortcut);
-            this.groupBoxNewShortcut.Location = new System.Drawing.Point(3, 283);
+            this.groupBoxNewShortcut.Location = new System.Drawing.Point(3, 307);
             this.groupBoxNewShortcut.Name = "groupBoxNewShortcut";
-            this.groupBoxNewShortcut.Size = new System.Drawing.Size(555, 50);
+            this.groupBoxNewShortcut.Size = new System.Drawing.Size(557, 50);
             this.groupBoxNewShortcut.TabIndex = 4;
             this.groupBoxNewShortcut.TabStop = false;
             this.groupBoxNewShortcut.Text = "New Shortcut";
@@ -170,14 +170,14 @@
             this.textbox_new_shortcut.Name = "textbox_new_shortcut";
             this.textbox_new_shortcut.ReadOnly = true;
             this.textbox_new_shortcut.ShortcutsEnabled = false;
-            this.textbox_new_shortcut.Size = new System.Drawing.Size(365, 19);
+            this.textbox_new_shortcut.Size = new System.Drawing.Size(367, 19);
             this.textbox_new_shortcut.TabIndex = 2;
             this.textbox_new_shortcut.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textbox_new_shortcut_PreviewKeyDown);
             // 
             // buttonAssignShortcut
             // 
             this.buttonAssignShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAssignShortcut.Location = new System.Drawing.Point(475, 17);
+            this.buttonAssignShortcut.Location = new System.Drawing.Point(477, 17);
             this.buttonAssignShortcut.Name = "buttonAssignShortcut";
             this.buttonAssignShortcut.Size = new System.Drawing.Size(75, 23);
             this.buttonAssignShortcut.TabIndex = 1;
@@ -187,7 +187,7 @@
             // buttonAddShortcut
             // 
             this.buttonAddShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddShortcut.Location = new System.Drawing.Point(394, 17);
+            this.buttonAddShortcut.Location = new System.Drawing.Point(396, 17);
             this.buttonAddShortcut.Name = "buttonAddShortcut";
             this.buttonAddShortcut.Size = new System.Drawing.Size(75, 23);
             this.buttonAddShortcut.TabIndex = 0;
@@ -199,9 +199,9 @@
             this.groupBoxShortcutUsed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxShortcutUsed.Controls.Add(this.labelShortcutUsed);
-            this.groupBoxShortcutUsed.Location = new System.Drawing.Point(3, 336);
+            this.groupBoxShortcutUsed.Location = new System.Drawing.Point(3, 360);
             this.groupBoxShortcutUsed.Name = "groupBoxShortcutUsed";
-            this.groupBoxShortcutUsed.Size = new System.Drawing.Size(555, 50);
+            this.groupBoxShortcutUsed.Size = new System.Drawing.Size(557, 50);
             this.groupBoxShortcutUsed.TabIndex = 5;
             this.groupBoxShortcutUsed.TabStop = false;
             this.groupBoxShortcutUsed.Text = "Shortcut used by:";
@@ -212,13 +212,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelShortcutUsed.Location = new System.Drawing.Point(10, 23);
             this.labelShortcutUsed.Name = "labelShortcutUsed";
-            this.labelShortcutUsed.Size = new System.Drawing.Size(537, 12);
+            this.labelShortcutUsed.Size = new System.Drawing.Size(539, 12);
             this.labelShortcutUsed.TabIndex = 3;
             // 
             // buttonSetAllToDefault
             // 
             this.buttonSetAllToDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonSetAllToDefault.Location = new System.Drawing.Point(3, 391);
+            this.buttonSetAllToDefault.Location = new System.Drawing.Point(3, 415);
             this.buttonSetAllToDefault.Name = "buttonSetAllToDefault";
             this.buttonSetAllToDefault.Size = new System.Drawing.Size(173, 23);
             this.buttonSetAllToDefault.TabIndex = 6;
@@ -228,7 +228,7 @@
             // buttonOk
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOk.Location = new System.Drawing.Point(348, 391);
+            this.buttonOk.Location = new System.Drawing.Point(350, 415);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(102, 23);
             this.buttonOk.TabIndex = 7;
@@ -238,7 +238,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.Location = new System.Drawing.Point(456, 391);
+            this.buttonCancel.Location = new System.Drawing.Point(458, 415);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(102, 23);
             this.buttonCancel.TabIndex = 8;
@@ -254,7 +254,7 @@
             this.tabControlCommands.Location = new System.Drawing.Point(2, 2);
             this.tabControlCommands.Name = "tabControlCommands";
             this.tabControlCommands.SelectedIndex = 0;
-            this.tabControlCommands.Size = new System.Drawing.Size(557, 160);
+            this.tabControlCommands.Size = new System.Drawing.Size(559, 193);
             this.tabControlCommands.TabIndex = 1;
             this.tabControlCommands.SelectedIndexChanged += new System.EventHandler(this.tabControlCommands_SelectedIndexChanged);
             // 
@@ -264,7 +264,7 @@
             this.tabPageBase.Location = new System.Drawing.Point(4, 22);
             this.tabPageBase.Name = "tabPageBase";
             this.tabPageBase.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBase.Size = new System.Drawing.Size(549, 134);
+            this.tabPageBase.Size = new System.Drawing.Size(551, 167);
             this.tabPageBase.TabIndex = 0;
             this.tabPageBase.Text = "Commands";
             this.tabPageBase.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 418);
+            this.ClientSize = new System.Drawing.Size(564, 442);
             this.Controls.Add(this.tabControlCommands);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
