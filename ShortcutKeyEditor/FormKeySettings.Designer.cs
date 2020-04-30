@@ -39,7 +39,7 @@
             this.buttonRemoveShortcut = new System.Windows.Forms.Button();
             this.buttonSetToDefault = new System.Windows.Forms.Button();
             this.groupBoxNewShortcut = new System.Windows.Forms.GroupBox();
-            this.textbox_new_shortcut = new System.Windows.Forms.TextBox();
+            this.textboxNewShortcut = new System.Windows.Forms.TextBox();
             this.buttonAssignShortcut = new System.Windows.Forms.Button();
             this.buttonAddShortcut = new System.Windows.Forms.Button();
             this.groupBoxShortcutUsed = new System.Windows.Forms.GroupBox();
@@ -135,6 +135,7 @@
             this.buttonRemoveShortcut.TabIndex = 1;
             this.buttonRemoveShortcut.Text = "Remove";
             this.buttonRemoveShortcut.UseVisualStyleBackColor = true;
+            this.buttonRemoveShortcut.Click += new System.EventHandler(this.buttonRemoveShortcut_Click);
             // 
             // buttonSetToDefault
             // 
@@ -145,12 +146,13 @@
             this.buttonSetToDefault.TabIndex = 0;
             this.buttonSetToDefault.Text = "Default";
             this.buttonSetToDefault.UseVisualStyleBackColor = true;
+            this.buttonSetToDefault.Click += new System.EventHandler(this.buttonSetToDefault_Click);
             // 
             // groupBoxNewShortcut
             // 
             this.groupBoxNewShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxNewShortcut.Controls.Add(this.textbox_new_shortcut);
+            this.groupBoxNewShortcut.Controls.Add(this.textboxNewShortcut);
             this.groupBoxNewShortcut.Controls.Add(this.buttonAssignShortcut);
             this.groupBoxNewShortcut.Controls.Add(this.buttonAddShortcut);
             this.groupBoxNewShortcut.Location = new System.Drawing.Point(3, 307);
@@ -160,19 +162,19 @@
             this.groupBoxNewShortcut.TabStop = false;
             this.groupBoxNewShortcut.Text = "New Shortcut";
             // 
-            // textbox_new_shortcut
+            // textboxNewShortcut
             // 
-            this.textbox_new_shortcut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textboxNewShortcut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textbox_new_shortcut.Enabled = false;
-            this.textbox_new_shortcut.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textbox_new_shortcut.Location = new System.Drawing.Point(10, 19);
-            this.textbox_new_shortcut.Name = "textbox_new_shortcut";
-            this.textbox_new_shortcut.ReadOnly = true;
-            this.textbox_new_shortcut.ShortcutsEnabled = false;
-            this.textbox_new_shortcut.Size = new System.Drawing.Size(367, 19);
-            this.textbox_new_shortcut.TabIndex = 2;
-            this.textbox_new_shortcut.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textbox_new_shortcut_PreviewKeyDown);
+            this.textboxNewShortcut.Enabled = false;
+            this.textboxNewShortcut.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textboxNewShortcut.Location = new System.Drawing.Point(10, 19);
+            this.textboxNewShortcut.Name = "textboxNewShortcut";
+            this.textboxNewShortcut.ReadOnly = true;
+            this.textboxNewShortcut.ShortcutsEnabled = false;
+            this.textboxNewShortcut.Size = new System.Drawing.Size(367, 19);
+            this.textboxNewShortcut.TabIndex = 2;
+            this.textboxNewShortcut.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textboxNewShortcut_PreviewKeyDown);
             // 
             // buttonAssignShortcut
             // 
@@ -183,6 +185,7 @@
             this.buttonAssignShortcut.TabIndex = 1;
             this.buttonAssignShortcut.Text = "Assign";
             this.buttonAssignShortcut.UseVisualStyleBackColor = true;
+            this.buttonAssignShortcut.Click += new System.EventHandler(this.buttonAssignShortcut_Click);
             // 
             // buttonAddShortcut
             // 
@@ -193,6 +196,7 @@
             this.buttonAddShortcut.TabIndex = 0;
             this.buttonAddShortcut.Text = "Add";
             this.buttonAddShortcut.UseVisualStyleBackColor = true;
+            this.buttonAddShortcut.Click += new System.EventHandler(this.buttonAddShortcut_Click);
             // 
             // groupBoxShortcutUsed
             // 
@@ -224,6 +228,7 @@
             this.buttonSetAllToDefault.TabIndex = 6;
             this.buttonSetAllToDefault.Text = "Set All To Default";
             this.buttonSetAllToDefault.UseVisualStyleBackColor = true;
+            this.buttonSetAllToDefault.Click += new System.EventHandler(this.buttonSetAllToDefault_Click);
             // 
             // buttonOk
             // 
@@ -234,6 +239,7 @@
             this.buttonOk.TabIndex = 7;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // buttonCancel
             // 
@@ -244,6 +250,7 @@
             this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // tabControlCommands
             // 
@@ -313,7 +320,7 @@
         private System.Windows.Forms.Button buttonSetToDefault;
         private System.Windows.Forms.Button buttonAssignShortcut;
         private System.Windows.Forms.Button buttonAddShortcut;
-        private System.Windows.Forms.TextBox textbox_new_shortcut;
+        private System.Windows.Forms.TextBox textboxNewShortcut;
         private System.Windows.Forms.TabControl tabControlCommands;
         private System.Windows.Forms.TabPage tabPageBase;
         private System.Windows.Forms.Label labelCurrentShortcut;
