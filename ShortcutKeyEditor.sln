@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutKeyEditor", "ShortcutKeyEditor\ShortcutKeyEditor.csproj", "{574D8B0A-8A1E-4733-A20E-97CBD62BB1D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutKeyManager", "ShortcutKeyManager\ShortcutKeyManager.csproj", "{BEB9D4FC-1950-493D-B025-156439A314C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{574D8B0A-8A1E-4733-A20E-97CBD62BB1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{574D8B0A-8A1E-4733-A20E-97CBD62BB1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{574D8B0A-8A1E-4733-A20E-97CBD62BB1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB9D4FC-1950-493D-B025-156439A314C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB9D4FC-1950-493D-B025-156439A314C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB9D4FC-1950-493D-B025-156439A314C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB9D4FC-1950-493D-B025-156439A314C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

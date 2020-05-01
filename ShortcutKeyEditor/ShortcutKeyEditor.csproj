@@ -89,6 +89,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\ja\Localization.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ShortcutKeyManager\ShortcutKeyManager.csproj">
+      <Project>{beb9d4fc-1950-493d-b025-156439a314c7}</Project>
+      <Name>ShortcutKeyManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

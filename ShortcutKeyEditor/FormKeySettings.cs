@@ -62,6 +62,7 @@ namespace ShortcutKeyEditor
                 }
 
                 var tabPage = new TabPage();
+                tabPage.Name = layoutTab.Id;
                 tabPage.Text = layoutTab.Label;
                 tabPage.Controls.Add(listview);
                 tabPage.Tag = listview;
@@ -256,7 +257,36 @@ namespace ShortcutKeyEditor
         /// <param name="e"></param>
         private void buttonOk_Click(object sender, EventArgs e)
         {
+            var keyParams = new List<ShortcutKeyManager.ShortcutKeyManager.KeyParam>();
+            foreach (TabPage tabPage in tabControlCommands.TabPages)
+            {
+                var listview = tabPage.Tag as ListView;
+                foreach (ListViewItem item in listview.Items)
+                {
+                    var layoutKeySet = item.Tag as LayoutParam.KeySet;
+                    var keyParam = new ShortcutKeyManager.ShortcutKeyManager.KeyParam();
+                    keyParam.Id = tabPage.Name + "_" + layoutKeySet.Id;
+                    keyParam.KeyTexts = GetShortcutKeys(item);
+                    keyParams.Add(keyParam);
+                }
+            }
 
+            var hashset = new HashSet<string>();
+            foreach (var keyParam in keyParams)
+            {
+                if (!hashset.Add(keyParam.Id))
+                {
+                    MessageBox.Show(
+                        keyParam.Id + " が重複して登録されています。",
+                        Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            if (ShortcutKeyManager.ShortcutKeyManager.WriteSettings(@"./shortcutkeys.xml", keyParams))
+            {
+                Close();
+            }
         }
 
         /// <summary>
