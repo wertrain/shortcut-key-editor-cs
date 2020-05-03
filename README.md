@@ -27,43 +27,43 @@ generic shortcut editing form.
 </layout>
 ```
 
-## Output settings file (example)
+## Output settings file
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <shortcutkeys>
-	<shortcutkey id="basic@undo">
-		<key>Ctrl+Z</key>
-	</shortcutkey>
-	<shortcutkey id="basic@redo">
-		<key>Ctrl+Y</key>
-	</shortcutkey>
-	<shortcutkey id="basic@select_all">
-		<key>Ctrl+A</key>
-	</shortcutkey>
-	<shortcutkey id="basic@copy">
-		<key>Ctrl+C</key>
-	</shortcutkey>
-	<shortcutkey id="basic@cut">
-		<key>Ctrl+X</key>
-	</shortcutkey>
-	<shortcutkey id="basic@clipboard">
-		<key>LWin+V</key>
-	</shortcutkey>
-	<shortcutkey id="basic@save">
-		<key>Ctrl+S</key>
-	</shortcutkey>
-	<shortcutkey id="basic@open">
-		<key>Ctrl+o</key>
-	</shortcutkey>
-	<shortcutkey id="file_and_folder@select_all">
-		<key>Ctrl+A</key>
-	</shortcutkey>
-	<shortcutkey id="file_and_folder@copy">
-		<key>Ctrl+C</key>
-	</shortcutkey>
-	<shortcutkey id="file_and_folder@move">
-		<key>Ctrl+X</key>
-	</shortcutkey>
+  <shortcutkey id="basic@undo">
+    <key>Ctrl+Z</key>
+  </shortcutkey>
+  <shortcutkey id="basic@redo">
+    <key>Ctrl+Y</key>
+  </shortcutkey>
+  <shortcutkey id="basic@select_all">
+    <key>Ctrl+A</key>
+  </shortcutkey>
+  <shortcutkey id="basic@copy">
+    <key>Ctrl+C</key>
+  </shortcutkey>
+  <shortcutkey id="basic@cut">
+    <key>Ctrl+X</key>
+  </shortcutkey>
+  <shortcutkey id="basic@clipboard">
+    <key>LWin+V</key>
+  </shortcutkey>
+  <shortcutkey id="basic@save">
+    <key>Ctrl+S</key>
+  </shortcutkey>
+  <shortcutkey id="basic@open">
+    <key>Ctrl+o</key>
+  </shortcutkey>
+  <shortcutkey id="file_and_folder@select_all">
+    <key>Ctrl+A</key>
+  </shortcutkey>
+  <shortcutkey id="file_and_folder@copy">
+    <key>Ctrl+C</key>
+  </shortcutkey>
+  <shortcutkey id="file_and_folder@move">
+    <key>Ctrl+X</key>
+  </shortcutkey>
 </shortcutkeys>
 ```
