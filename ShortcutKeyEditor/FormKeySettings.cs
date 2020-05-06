@@ -32,6 +32,9 @@ namespace ShortcutKeyEditor
         {
             tabControlCommands.TabPages.Clear();
 
+            var settings = ShortcutKeyManager.ShortcutKeyManager.LoadSettings("shortcutkeys.xml");
+            if (settings == null) settings = new Dictionary<string, ShortcutKeyManager.ShortcutKeyManager.KeyParam>();
+
             var layout = LayoutLoader.Load(@".\layout.xml");
             foreach (var layoutTab in layout.Tabs)
             {
@@ -52,9 +55,11 @@ namespace ShortcutKeyEditor
 
                 foreach (var layoutKeySet in layoutTab.KeySets)
                 {
+                    var settingsId = layoutTab.Id + SettingsIdNameSeparator + layoutKeySet.Id;
                     var item = new ListViewItem(layoutKeySet.Label);
                     var subItem = new ListViewItem.ListViewSubItem();
-                    subItem.Text = string.Join(", ", layoutKeySet.KeyTexts);
+                    if (settings.ContainsKey(settingsId)) subItem.Text = string.Join(", ", settings[settingsId].KeyTexts);
+                    else subItem.Text = string.Join(", ", layoutKeySet.KeyTexts);
                     item.SubItems.Add(subItem);
                     item.Tag = layoutKeySet;
                     listview.Items.Add(item);
@@ -97,7 +102,7 @@ namespace ShortcutKeyEditor
         {
             var textbox = sender as TextBox;
             var inputKeys = ModifierKeys | e.KeyCode;
-            textbox.Text = KeyUtil.KeysToString(inputKeys);
+            textbox.Text = ShortcutKeyManager.ShortcutKeyManager.KeysToString(inputKeys);
 
             var tabPage = tabControlCommands.SelectedTab;
             if (tabPage == null) return;
@@ -265,7 +270,7 @@ namespace ShortcutKeyEditor
                 {
                     var layoutKeySet = item.Tag as LayoutParam.KeySet;
                     var keyParam = new ShortcutKeyManager.ShortcutKeyManager.KeyParam();
-                    keyParam.Id = tabPage.Name + "_" + layoutKeySet.Id;
+                    keyParam.Id = tabPage.Name + SettingsIdNameSeparator + layoutKeySet.Id;
                     keyParam.KeyTexts = GetShortcutKeys(item);
                     keyParams.Add(keyParam);
                 }
@@ -355,5 +360,10 @@ namespace ShortcutKeyEditor
                 }
             }
         }
+
+        /// <summary>
+        /// 設定名のセパレータ
+        /// </summary>
+        private static char SettingsIdNameSeparator = '@';
     }
 }

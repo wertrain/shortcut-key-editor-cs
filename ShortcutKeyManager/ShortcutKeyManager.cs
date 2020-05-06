@@ -96,8 +96,8 @@ namespace ShortcutKeyManager
                     {
                         keyParam.KeyTexts.Add(key.Value);
                         keyParam.Keys.Add(StringToKeys(key.Value));
-                        result.Add(keyParam.Id, keyParam);
-                    }     
+                    }
+                    result.Add(keyParam.Id, keyParam);
                 }
             }
             catch
@@ -201,7 +201,6 @@ namespace ShortcutKeyManager
         /// 属性名：名前
         /// </summary>
         private static readonly string AttributeNameId = "id";
-
 
         /// <summary>
         /// 入力されたキー表示のセパレータ
