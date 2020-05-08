@@ -17,7 +17,7 @@ generic shortcut editing form.
     <keyset label="切り取る" id="cut">Ctrl+X</keyset>
     <keyset label="クリップボードの履歴" id="clipboard">LWin+V</keyset>
     <keyset label="ファイルを保存" id="save">Ctrl+S</keyset>
-    <keyset label="ファイルを開く" id="open">Ctrl+o</keyset>
+    <keyset label="ファイルを開く" id="open">Ctrl+O</keyset>
   </tab>
   <tab label="ファイルとフォルダ" id="file_and_folder">
     <keyset label="すべて選択" id="select_all">Ctrl+A</keyset>
